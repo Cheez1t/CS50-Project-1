@@ -1,0 +1,18 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Edit Page</title>
+    </head>
+    <body>
+        <form action={% url 'edit' entry %} method="post">
+            <h1>Editing: {{ entry }}</h1>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Save">
+        </form>
+    </body>
+</html>
+</html>

@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ entry }}
+{% endblock %}
+
+{% block body %}
+    {% if exists %}
+        {{ content|safe }}
+        <li><a href='/edit/{{ entry }}'>Edit</a></li>
+    {% else %}
+        <h1>Error</h1>
+        No one has made a page for "{{ entry }}" yet!
+    {% endif %}
+{% endblock %}
